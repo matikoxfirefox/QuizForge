@@ -40,4 +40,4 @@ Projekt korzysta z Open Trivia Database — darmowego, społecznościowego API z
 
 --------------------------------------------------------------------------
 
-# Część mojej drogi nauki Frontend Developmentu. Poprzedni projekt: TaskFlow
+Część mojej drogi nauki Frontend Developmentu. Poprzedni projekt: TaskFlow
