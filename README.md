@@ -1,11 +1,10 @@
 # QuizForge 🧠
     Dynamiczna aplikacja quizowa zbudowana w czystym JavaScripcie, zasilana przez Open Trivia Database API.
 
-Live Demo
+# Live Demo
     In Progress...
 
-Screenshots
-
+# Screenshots
     In Progress...
 
 Features
