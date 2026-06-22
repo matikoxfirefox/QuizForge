@@ -1,15 +1,15 @@
-## 🇵🇱 POLSKI
+# POLSKI
 
-# QuizForge 🧠
+## QuizForge 🧠
     Dynamiczna aplikacja quizowa zbudowana w czystym JavaScripcie, zasilana przez Open Trivia Database API.
 
-# Live Demo
+## Live Demo
     In Progress...
 
-# Zrzuty ekranu
+## Zrzuty ekranu
     In Progress...
 
-# Funkcje
+## Funkcje
    - 15 pytań na grę pobieranych na żywo z Open Trivia Database
    - Wybór kategorii — dziesiątki kategorii tematycznych do wyboru
    - Poziomy trudności — łatwy, średni lub trudny
@@ -18,7 +18,7 @@
    - Historia gier — śledzenie poprzednich wyników (wynik, data, procent) zapisywanych lokalnie
    - Responsywny design — działa na komputerze i telefonie
 
-# Technologie
+## Technologie
 
  - HTML5
  - CSS3
@@ -26,17 +26,17 @@
  - Open Trivia Database API
  - localStorage (zapis historii gier)
 
-# Struktura projektu
+## Struktura projektu
 
     QuizForge/
     ├── quizforge.html
     ├── quizforge.css
     └── quizforge.js
 
-# API
+## API
 Projekt korzysta z Open Trivia Database — darmowego, społecznościowego API z pytaniami quizowymi.
 
-# Status
+## Status
 
 🚧 W trakcie budowy
 
@@ -46,18 +46,18 @@ Część mojej drogi nauki Frontend Developmentu. Poprzedni projekt: TaskFlow
 
 ===========================================================================
 
-## 🇬🇧 English
+# English
 
-# QuizForge 🧠
+## QuizForge 🧠
     A dynamic quiz application built with vanilla JavaScript, powered by the Open Trivia Database API.
 
-# Live Demo
+## Live Demo
     In Progress...
 
-# Screenshots
+## Screenshots
     In Progress...
 
-# Features
+## Features
    - 15 questions per game fetched live from Open Trivia Database
    - Category selection — dozens of trivia categories to choose from
    - Difficulty levels — easy, medium, or hard
@@ -66,7 +66,7 @@ Część mojej drogi nauki Frontend Developmentu. Poprzedni projekt: TaskFlow
    - Game history — track previous results (score, date, percentage) stored locally
    - Responsive design — works on desktop and mobile
 
-# Tech Stack
+## Tech Stack
 
  - HTML5
  - CSS3
@@ -74,17 +74,17 @@ Część mojej drogi nauki Frontend Developmentu. Poprzedni projekt: TaskFlow
  - Open Trivia Database API
  - localStorage (game history persistence)
 
-# Project Structure
+## Project Structure
 
     QuizForge/
     ├── quizforge.html
     ├── quizforge.css
     └── quizforge.js
 
-# API
+## API
 This project uses the Open Trivia Database — a free, community-sourced trivia API.
 
-# Status
+## Status
 
 🚧 W trakcie budowy
 
