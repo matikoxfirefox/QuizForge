@@ -1,4 +1,4 @@
-## POLSKI
+## 🇵🇱 POLSKI
 
 # QuizForge 🧠
     Dynamiczna aplikacja quizowa zbudowana w czystym JavaScripcie, zasilana przez Open Trivia Database API.
@@ -46,7 +46,7 @@ Część mojej drogi nauki Frontend Developmentu. Poprzedni projekt: TaskFlow
 
 ===========================================================================
 
-## English
+## 🇬🇧 English
 
 # QuizForge 🧠
     A dynamic quiz application built with vanilla JavaScript, powered by the Open Trivia Database API.
@@ -72,7 +72,7 @@ Część mojej drogi nauki Frontend Developmentu. Poprzedni projekt: TaskFlow
  - CSS3
  - JavaScript (ES6+)
  - Open Trivia Database API
- - localStorage (zapis historii gier)
+ - localStorage (game history persistence)
 
 # Project Structure
 
