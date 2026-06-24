@@ -8,11 +8,12 @@ body {
     justify-content: center;
     min-height: 100vh;
     align-items: center;
+    background-color: rgb(150, 145, 140);
 }
 
 /* ------------- Menu Section ------------- */
 #menu_window {
-    display: block;
+    display: none;
 }
 /* ------------- History Section ------------- */
 #history_window {
@@ -20,7 +21,10 @@ body {
 }
 /* ------------- Select Section ------------- */
 #select_window {
-    display: none;
+    display: block;
+}
+#cat_select {
+    width: 200px;
 }
 /* ------------- Quiz Section ------------- */
 #quiz_window {
