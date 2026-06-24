@@ -10,6 +10,12 @@ const startBtn = document.getElementById("start_btn");
 const scoreBtn = document.getElementById("score_btn");
 const catSelect = document.getElementById("cat_select");
 const difSelect = document.getElementById("dif_select");
+const questionCat = document.getElementById("question_cat");
+const questionDif = document.getElementById("question_dif");
+const questionTitle = document.getElementById("question_title");
+const answSection = document.getElementById("answ_section");
+
+let questions = [];
 window.onload = () =>{
     categoryGenerator();
 }
@@ -38,6 +44,7 @@ async function categoryGenerator(){
         console.log(err);
     }
 }
+// ------- Options Selector Function (Select Window) ------- //
 async function optionsSelector() {
     try {
         const selectedCat = catSelect.value;
@@ -46,28 +53,34 @@ async function optionsSelector() {
         if (selectedCat === "1" && selectedDif === "random" ){
             const randomQ = await fetch(`https://opentdb.com/api.php?amount=15`)
             const randomQJson = await randomQ.json();
-            console.log(randomQJson);
+            questions =  await randomQJson.results;
         }else if (selectedDif === "random"){
             const randomDif = await fetch(`https://opentdb.com/api.php?amount=15&category=${selectedCat}`);
             const randomDifJson = await randomDif.json();
-            console.log(randomDifJson);
+            questions = await randomDifJson.results;
         }else if (selectedCat === "1") {
             const randomCat = await fetch(`https://opentdb.com/api.php?amount=15&difficulty=${selectedDif}`);
             const randomCatJson = await randomCat.json();
-            console.log(randomCatJson);
+            questions = await randomCatJson.results;
         }else {
-            const questions = await fetch(`https://opentdb.com/api.php?amount=15&category=${selectedCat}&difficulty=${selectedDif}`)
-            const questJson = await questions.json();
-            console.log(questJson);
+            const question = await fetch(`https://opentdb.com/api.php?amount=15&category=${selectedCat}&difficulty=${selectedDif}`)
+            const questJson = await question.json();
+            questions = await questJson.results;
         }
+        console.log(questions);
     }
     catch(err) {
         console.log(err);
     }
 }
 
-
-
+function renderQuestion(){
+    let currentQuestion = 1;
+    questionCat.innerHTML = questions[currentQuestion].category;
+    questionDif.innerHTML = questions[currentQuestion].difficulty;
+    questionTitle.innerHTML = questions[currentQuestion].question;
+    // answSection.innerHTML;
+}
 
 
 
@@ -89,6 +102,7 @@ startBtn.addEventListener('click', ()=>{
     } else {
         showScreen(quizWindow);
         optionsSelector();
+        renderQuestion();
     }
 })
 scoreBtn.addEventListener('click', ()=>{

@@ -28,7 +28,7 @@ body {
 }
 /* ------------- Quiz Section ------------- */
 #quiz_window {
-    display: none;
+    display: block;
 }
 /* ------------- Score Section ------------- */
 #score_window {
