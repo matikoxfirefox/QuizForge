@@ -8,7 +8,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     align-items: center;
-    background-color: rgb(150, 145, 140);
+    background-color: rgb(199, 195, 192);
 }
 
 /* ------------- Menu Section ------------- */
@@ -22,6 +22,10 @@ body {
 /* ------------- Select Section ------------- */
 #select_window {
     display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #cat_select {
     width: 200px;
@@ -30,7 +34,17 @@ body {
 #quiz_window {
     display: block;
 }
+#answ_section button {
+    width: 200px;
+}
 /* ------------- Score Section ------------- */
 #score_window {
     display: none;
+}
+.correctAnsw {
+    border: 1px solid rgb(13, 211, 13);
+    background: rgba(13, 211, 13, 0.356); 
+}
+.inCorrectAnsw {
+    background: red;
 }

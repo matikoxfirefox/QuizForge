@@ -1,13 +1,16 @@
+// ------- Quiz windows variables ------- //
 const menuWindow = document.getElementById("menu_window");
 const historyWindow = document.getElementById("history_window");
 const selectWindow = document.getElementById("select_window");
 const quizWindow = document.getElementById("quiz_window");
 const scoreWindow = document.getElementById("score_window");
+// ------- Quiz windows navigate buttons ------- //
 const selectBtn = document.getElementById("select_btn");
 const historyBtn = document.getElementById("history_btn");
 const menuBtn = document.getElementById("menu_btn");
 const startBtn = document.getElementById("start_btn");
 const scoreBtn = document.getElementById("score_btn");
+// ------- Questions variables selectors ------- //
 const catSelect = document.getElementById("cat_select");
 const difSelect = document.getElementById("dif_select");
 const questionCat = document.getElementById("question_cat");
@@ -15,7 +18,9 @@ const questionDif = document.getElementById("question_dif");
 const questionTitle = document.getElementById("question_title");
 const answSection = document.getElementById("answ_section");
 
+let currentQuestion = 5;
 let questions = [];
+
 window.onload = () =>{
     categoryGenerator();
 }
@@ -67,22 +72,59 @@ async function optionsSelector() {
             const questJson = await question.json();
             questions = await questJson.results;
         }
-        console.log(questions);
     }
     catch(err) {
-        console.log(err);
+        console.error(err);
     }
+    renderQuestion()
 }
-
+// ------- Shuffle funtion to randomize answers in quiz ------- //
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; 
+    }
+    return array;
+}
+// ------- Rendering question function ------- //
+let answBtns = []; // Answer buttons array
 function renderQuestion(){
-    let currentQuestion = 1;
     questionCat.innerHTML = questions[currentQuestion].category;
-    questionDif.innerHTML = questions[currentQuestion].difficulty;
-    questionTitle.innerHTML = questions[currentQuestion].question;
-    // answSection.innerHTML;
+    questionDif.innerHTML =  questions[currentQuestion].difficulty;
+    questionTitle.innerHTML =  questions[currentQuestion].question;
+    const anwsers = questions[currentQuestion].incorrect_answers.concat(questions[currentQuestion].correct_answer)
+    shuffle(anwsers);
+
+    anwsers.forEach((answ) => {
+        const btn = document.createElement('button');
+        btn.textContent = answ;
+        if ((questions[currentQuestion].incorrect_answers).includes(answ)) {
+            btn.classList.add("inCorrectBtns");
+        }
+        if ((questions[currentQuestion].correct_answer).includes(answ)){
+            btn.classList.add("correctBtns");
+        }
+    
+            answSection.appendChild(btn);
+            answBtns.push(btn);
+
+            btn.addEventListener('click', ()=> {
+                if ((questions[currentQuestion].incorrect_answers).includes(answ)) {
+                    btn.classList.add("inCorrectAnsw");
+                    document.querySelector(".correctBtns").classList.add("correctAnsw");
+                } else {
+                    btn.classList.add("correctAnsw");
+                }
+                answBtns.forEach(choice => {
+                    choice.disabled = true;
+                })
+            })
+    })
+    
+    console.log(questions);
+    console.log(anwsers);
+    console.log(answBtns);
 }
-
-
 
 
 // ------- Window changing buttons ------- // 
@@ -102,7 +144,6 @@ startBtn.addEventListener('click', ()=>{
     } else {
         showScreen(quizWindow);
         optionsSelector();
-        renderQuestion();
     }
 })
 scoreBtn.addEventListener('click', ()=>{
