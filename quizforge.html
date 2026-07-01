@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,46 +8,53 @@
     <link rel="stylesheet" href="quizforge.css">
     <link rel="shortcut icon" href="Assets/facivo.png" type="image/x-icon">
 </head>
+
 <body>
     <main>
         <div id="menu_window">
             <h1>QuizForge App</h1>
-            <button id="select_btn">Rozpocznij</button>
-            <button id="history_btn">Historia gier</button>
+            <button id="select_btn">Let's begin!</button>
+            <button id="history_btn">Game history</button>
         </div>
         <div id="history_window">
             <h1>Historia gier</h1>
-            <button id="menu_btn">Wróć do menu</button>
+            <button id="menu_btn">Back to menu</button>
         </div>
         <div id="select_window">
-            <h1>Select Window</h1>
-            <select name="category_select" id="cat_select">
-                <option value="cat_selector" disabled selected>Select category</option>
-                <option value="1">Random</option>
-            </select>
-            <select name="difficulty_select" id="dif_select">
-                <option value="dif_selector" disabled selected>Select difficulty</option>
-                <option value="random">Random</option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-            <button id="start_btn">Start!</button>
+            <div id="select_section">
+                <h1>Select Window</h1>
+                <select name="category_select" id="cat_select">
+                    <option value="cat_selector" disabled selected>Select category</option>
+                    <option value="1">Random</option>
+                </select>
+                <select name="difficulty_select" id="dif_select">
+                    <option value="dif_selector" disabled selected>Select difficulty</option>
+                    <option value="random">Random</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <button id="start_btn">Start!</button>
+            </div>
         </div>
         <div id="quiz_window">
+            <h3 id="counter"></h3>
             <h2 id="timer"></h2>
             <h2 id="question_cat"></h2>
             <h2 id="question_dif"></h2>
             <h1 id="question_title"></h1>
             <div id="answ_section">
-                
+
             </div>
         </div>
         <div id="score_window">
             <h1>Score Window</h1>
-            <button id="score_btn">Wróć do menu</button>
+            <h2 id="final_score"></h2>
+            <h2 id="comment"></h2>
+            <button id="score_btn">Back to menu</button>
         </div>
     </main>
 </body>
 <script src="quizforge.js"></script>
+
 </html>

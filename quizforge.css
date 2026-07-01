@@ -22,6 +22,8 @@ body {
 /* ------------- Select Section ------------- */
 #select_window {
     display: block;
+}
+#select_section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +34,7 @@ body {
 }
 /* ------------- Quiz Section ------------- */
 #quiz_window {
-    display: block;
+    display: none;
 }
 #answ_section button {
     width: 200px;
